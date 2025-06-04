@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROTONE - The Meme of the Future</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* [same CSS as before] */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to <span class="highlight">$PROTONE</span></h1>
+    <p>The Galactic Meme Revolution is here</p>
+    <nav>
+      <a href="#whitepaper">Whitepaper</a>
+      <a href="#stats">Live Stats</a>
+      <a href="#claim">Claim</a>
+      <a href="#join">Community</a>
+      <a href="#register">Register</a>
+      <a href="#staking-calc">Staking Calculator</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- [About & Tokenomics same as before] -->
+
+    <div class="card" id="whitepaper">
+      <h2>📄 Whitepaper</h2>
+      <p>Read our full vision, token mechanics, roadmap, and philosophy in the whitepaper.</p>
+      <a href="whitepaper.pdf" class="neon-button" target="_blank">Download Whitepaper</a>
+    </div>
+
+    <div class="card" id="stats">
+      <h2>📊 Live Stats</h2>
+      <p>Track $PROTONE real-time data like price, volume, and holders as we rise in the rankings.</p>
+      <a href="https://dexscreener.com/solana/52tAqR4GXMbqNfWb5Rq3f59Cry7GogRbfZ7ReyVEGDC2" class="neon-button" target="_blank">View Live Chart</a>
+      <a href="https://solscan.io/token/52tAqR4GXMbqNfWb5Rq3f59Cry7GogRbfZ7ReyVEGDC2" class="neon-button" target="_blank">Check Solscan</a>
+    </div>
+
+    <div class="card" id="claim">
+      <h2>💰 Claim Rewards</h2>
+      <p>Connect your wallet to check if you're eligible to claim $PROTONE tokens.</p>
+      <a href="#" class="neon-button">Connect Wallet (Soon)</a>
+      <a href="#" class="neon-button">Claim $PROTONE</a>
+    </div>
+
+    <div class="card" id="register">
+      <h2>📝 Register for Airdrop</h2>
+      <p>Early supporters can register for airdrop eligibility. Enter your wallet address below:</p>
+      <input type="text" placeholder="Your Solana Wallet Address" />
+      <a href="#" class="neon-button">Register</a>
+    </div>
+
+    <div class="card" id="staking-calc">
+      <h2>📈 Staking Calculator</h2>
+      <p>Estimate your $PROTONE staking rewards:</p>
+      <input type="number" id="amount" placeholder="Amount to stake" />
+      <input type="number" id="days" placeholder="Staking duration (days)" />
+      <a href="#" class="neon-button" onclick="calculateStaking()">Calculate</a>
+      <p id="result"></p>
+    </div>
+
+    <div class="card" id="join">
+      <h2>🌌 Join the Revolution</h2>
+      <p>Spread the word. Get rewarded. Early airdrops for those who invite and engage.</p>
+      <a href="https://t.me/PROTONEtoken" class="neon-button" target="_blank">Join Telegram</a>
+      <a href="https://twitter.com/PROTONEtoken" class="neon-button" target="_blank">Follow Twitter</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 $PROTONE. Crafted with AI in the vastness of the crypto galaxy.</p>
+  </footer>
+
+  <script>
+    function calculateStaking() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const days = parseFloat(document.getElementById('days').value);
+      const apy = 500;
+      const result = (amount * (apy / 100) * (days / 365)).toFixed(2);
+      document.getElementById('result').innerText = `Estimated reward: ${result} $PROTONE`;
+    }
+  </script>
+</body>
+</html>
