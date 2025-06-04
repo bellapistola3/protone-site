@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROTONE - The Meme of the Future</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at center, #0f0f1a 0%, #050510 100%);
+      color: #00ffff;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0, 255, 255, 0.05);
+      border-bottom: 1px solid #00ffff33;
+      box-shadow: 0 0 30px #00ffff22;
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 15px #00ffff;
+    }
+    .highlight {
+      color: #ff00ff;
+      font-weight: bold;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #00ffff22;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 20px #00ffff33;
+      backdrop-filter: blur(10px);
+    }
+    .neon-button {
+      display: inline-block;
+      padding: 12px 25px;
+      border: 1px solid #00ffff;
+      color: #00ffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: transparent;
+      box-shadow: 0 0 15px #00ffff;
+      border-radius: 8px;
+      transition: 0.3s ease-in-out;
+      margin: 5px;
+    }
+    .neon-button:hover {
+      background: #00ffff33;
+      box-shadow: 0 0 25px #00ffff;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+      color: #888;
+    }
+    nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      color: #00ffff;
+      text-decoration: underline;
+    }
+    input, select {
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      width: 100%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to <span class="highlight">$PROTONE</span></h1>
+    <p>The Galactic Meme Revolution is here</p>
+    <nav>
+      <a href="#whitepaper">Whitepaper</a>
+      <a href="#stats">Live Stats</a>
+      <a href="#claim">Claim</a>
+      <a href="#join">Community</a>
+      <a href="#register">Register</a>
+      <a href="#staking-calc">Staking Calculator</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>About $PROTONE</h2>
+      <p>$PROTONE is a next-generation meme coin built for the people of the digital future — powered by AI, launched on Solana, and backed by unstoppable community energy. Stake, share, and thrive in a sci-fi meme economy!</p>
+    </div>
+
+    <div class="card">
+      <h2>Tokenomics</h2>
+      <ul>
+        <li><strong>Supply:</strong> 500,000,000 $PROTONE</li>
+        <li><strong>Staking Rewards:</strong> 40%</li>
+        <li><strong>Liquidity:</strong> 28% (140 SOL funded)</li>
+        <li><strong>Marketing:</strong> 5%</li>
+        <li><strong>Founder:</strong> 10% ($Starlight)</li>
+      </ul>
+    </div>
+
+    <div class="card" id="whitepaper">
+      <h2>📄 Whitepaper</h2>
+      <p>Read our full vision, token mechanics, roadmap, and philosophy in the whitepaper.</p>
+      <a href="#" class="neon-button">Download Whitepaper</a>
+    </div>
+
+    <div class="card" id="stats">
+      <h2>📊 Live Stats</h2>
+      <p>Track $PROTONE real-time data like price, volume, and holders as we rise in the rankings.</p>
+      <a href="#" class="neon-button">View Live Chart</a>
+      <a href="#" class="neon-button">Check Solscan</a>
+    </div>
+
+    <div class="card" id="claim">
+      <h2>💰 Claim Rewards</h2>
+      <p>Claimable only after $PROTONE is listed. Wallet connection and staking verification required.</p>
+      <a href="#" class="neon-button">Connect Wallet</a>
+      <a href="#" class="neon-button">Claim $PROTONE</a>
+    </div>
+
+    <div class="card" id="register">
+      <h2>📝 Register for Airdrop</h2>
+      <p>Early supporters can register for airdrop eligibility. Enter your wallet address below:</p>
+      <input type="text" placeholder="Your Solana Wallet Address" />
+      <a href="#" class="neon-button">Register</a>
+    </div>
+
+    <div class="card" id="staking-calc">
+      <h2>📈 Staking Calculator</h2>
+      <p>Estimate your $PROTONE staking rewards:</p>
+      <input type="number" id="amount" placeholder="Amount to stake" />
+      <input type="number" id="days" placeholder="Staking duration (days)" />
+      <a href="#" class="neon-button" onclick="calculateStaking()">Calculate</a>
+      <p id="result"></p>
+    </div>
+
+    <div class="card" id="join">
+      <h2>🌌 Join the Revolution</h2>
+      <p>Spread the word. Get rewarded. Early airdrops for those who invite and engage.</p>
+      <a href="#" class="neon-button">Join Telegram</a>
+      <a href="#" class="neon-button">Follow Twitter</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 $PROTONE. Crafted with AI in the vastness of the crypto galaxy.</p>
+  </footer>
+
+  <script>
+    function calculateStaking() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const days = parseFloat(document.getElementById('days').value);
+      const apy = 500;
+      const result = (amount * (apy / 100) * (days / 365)).toFixed(2);
+      document.getElementById('result').innerText = `Estimated reward: ${result} $PROTONE`;
+    }
+  </script>
+</body>
+</html>
