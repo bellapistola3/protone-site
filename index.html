@@ -44,23 +44,42 @@
       box-shadow: 0 0 20px #00ffff33;
       backdrop-filter: blur(10px);
     }
-    .neon-button {
+    .neon-button,
+    .buy-button-special {
       display: inline-block;
-      padding: 12px 25px;
-      border: 1px solid #00ffff;
-      color: #00ffff;
+      padding: 14px 30px;
+      margin: 10px;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      color: #0ff;
+      font-weight: bold;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 2px;
       background: transparent;
-      box-shadow: 0 0 15px #00ffff;
-      border-radius: 8px;
-      transition: 0.3s ease-in-out;
-      margin: 5px;
+      box-shadow: 0 0 20px #00ffffaa, 0 0 30px #00ffff55;
+      transition: all 0.3s ease-in-out;
     }
-    .neon-button:hover {
-      background: #00ffff33;
-      box-shadow: 0 0 25px #00ffff;
+    .neon-button:hover,
+    .buy-button-special:hover {
+      background: #00ffff22;
+      box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+    .buy-button-special {
+      animation: pulseGlow 2s infinite;
+    }
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 15px #00ffff66, 0 0 30px #00ffff33;
+      }
+      50% {
+        box-shadow: 0 0 30px #00ffffaa, 0 0 60px #00ffff66;
+      }
+      100% {
+        box-shadow: 0 0 15px #00ffff66, 0 0 30px #00ffff33;
+      }
     }
     footer {
       text-align: center;
@@ -107,7 +126,6 @@
       <h2>About $PROTONE</h2>
       <p>$PROTONE is a next-generation meme coin built for the people of the digital future — powered by AI, launched on Solana, and backed by unstoppable community energy. Stake, share, and thrive in a sci-fi meme economy!</p>
     </div>
-
     <div class="card">
       <h2>Tokenomics</h2>
       <ul>
@@ -135,8 +153,8 @@
     <div class="card" id="buy">
       <h2>🪙 Buy $PROTONE</h2>
       <p>Buy $PROTONE easily on Solana DEX platforms like Jupiter and Raydium.</p>
-      <a href="https://jup.ag/swap/SOL-PROTONE" class="neon-button" target="_blank">Buy on Jupiter</a>
-      <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=52tAqR4GXMbqNfWb5Rq3f59Cry7GogRbfZ7ReyVEGDC2" class="neon-button" target="_blank">Buy on Raydium</a>
+      <a href="https://jup.ag/swap/SOL-PROTONE" class="buy-button-special" target="_blank">🚀 Buy on Jupiter</a>
+      <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=52tAqR4GXMbqNfWb5Rq3f59Cry7GogRbfZ7ReyVEGDC2" class="buy-button-special" target="_blank">🌊 Buy on Raydium</a>
     </div>
 
     <div class="card" id="claim">
