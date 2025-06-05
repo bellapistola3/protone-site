@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PROTONE - The Meme of the Future</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@solana/wallet-adapter-wallets"></script>
+  <script src="https://unpkg.com/@solana/wallet-adapter-base"></script>
   <style>
     body {
       margin: 0;
@@ -94,9 +96,9 @@
       <a href="#whitepaper">Whitepaper</a>
       <a href="#stats">Live Stats</a>
       <a href="#claim">Claim</a>
-      <a href="#join">Community</a>
+      <a href="#buy">Buy</a>
       <a href="#register">Register</a>
-      <a href="#staking-calc">Staking Calculator</a>
+      <a href="#staking-calc">Staking</a>
     </nav>
   </header>
 
@@ -120,26 +122,32 @@
     <div class="card" id="whitepaper">
       <h2>📄 Whitepaper</h2>
       <p>Read our full vision, token mechanics, roadmap, and philosophy in the whitepaper.</p>
-      <a href="/whitepaper.pdf" class="neon-button" target="_blank">Download Whitepaper</a>
+      <a href="whitepaper.pdf" class="neon-button" target="_blank">Download Whitepaper (PDF)</a>
     </div>
 
     <div class="card" id="stats">
       <h2>📊 Live Stats</h2>
-      <p>Track $PROTONE real-time data like price, volume, and holders as we rise in the rankings.</p>
-      <a href="https://dexscreener.com/solana/52tAqR4GXMbqNfWb5Rq3f59Cry7GogRbfZ7ReyVEGDC2" class="neon-button" target="_blank">View Live Chart</a>
+      <p>Track $PROTONE real-time data like price, volume, and holders.</p>
+      <a href="https://dexscreener.com/solana/52tAqR4GXMbqNfWb5Rq3f59Cry7GogRbfZ7ReyVEGDC2" class="neon-button" target="_blank">View Chart</a>
       <a href="https://solscan.io/token/52tAqR4GXMbqNfWb5Rq3f59Cry7GogRbfZ7ReyVEGDC2" class="neon-button" target="_blank">Check Solscan</a>
+    </div>
+
+    <div class="card" id="buy">
+      <h2>🪙 Buy $PROTONE</h2>
+      <p>Use Jupiter Aggregator to buy $PROTONE on Solana DEX.</p>
+      <a href="https://jup.ag/swap/SOL-PROTONE" class="neon-button" target="_blank">Buy on Jupiter</a>
     </div>
 
     <div class="card" id="claim">
       <h2>💰 Claim Rewards</h2>
-      <p>Claimable only after $PROTONE is listed. Wallet connection and staking verification required.</p>
+      <p>Claim your airdrops here. Wallet connection required.</p>
       <a href="#" class="neon-button">Connect Wallet</a>
       <a href="#" class="neon-button">Claim $PROTONE</a>
     </div>
 
     <div class="card" id="register">
       <h2>📝 Register for Airdrop</h2>
-      <p>Early supporters can register for airdrop eligibility. Enter your wallet address below:</p>
+      <p>Enter your wallet address below:</p>
       <input type="text" placeholder="Your Solana Wallet Address" />
       <a href="#" class="neon-button">Register</a>
     </div>
@@ -149,15 +157,8 @@
       <p>Estimate your $PROTONE staking rewards:</p>
       <input type="number" id="amount" placeholder="Amount to stake" />
       <input type="number" id="days" placeholder="Staking duration (days)" />
-      <a href="#" class="neon-button" onclick="calculateStaking()">Calculate</a>
+      <a href="#" class="neon-button" onclick="calculateStaking(); return false;">Calculate</a>
       <p id="result"></p>
-    </div>
-
-    <div class="card" id="join">
-      <h2>🌌 Join the Revolution</h2>
-      <p>Spread the word. Get rewarded. Early airdrops for those who invite and engage.</p>
-      <a href="https://t.me/protoneportal" class="neon-button" target="_blank">Join Telegram</a>
-      <a href="https://twitter.com/protonecoin" class="neon-button" target="_blank">Follow Twitter</a>
     </div>
   </div>
 
@@ -170,6 +171,10 @@
       const amount = parseFloat(document.getElementById('amount').value);
       const days = parseFloat(document.getElementById('days').value);
       const apy = 500;
+      if (isNaN(amount) || isNaN(days)) {
+        document.getElementById('result').innerText = 'Please enter valid numbers.';
+        return;
+      }
       const result = (amount * (apy / 100) * (days / 365)).toFixed(2);
       document.getElementById('result').innerText = `Estimated reward: ${result} $PROTONE`;
     }
