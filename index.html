@@ -11,9 +11,18 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(ellipse at center, #0f0f1a 0%, #050510 100%);
       color: #00ffff;
       overflow-x: hidden;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/NASA-Hubble-image-of-phantom-galaxy-M74.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 20, 0.7);
+      z-index: -1;
     }
     .container {
       padding: 60px 20px;
@@ -71,15 +80,9 @@
       animation: pulseGlow 2s infinite;
     }
     @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 15px #00ffff66, 0 0 30px #00ffff33;
-      }
-      50% {
-        box-shadow: 0 0 30px #00ffffaa, 0 0 60px #00ffff66;
-      }
-      100% {
-        box-shadow: 0 0 15px #00ffff66, 0 0 30px #00ffff33;
-      }
+      0% { box-shadow: 0 0 15px #00ffff66, 0 0 30px #00ffff33; }
+      50% { box-shadow: 0 0 30px #00ffffaa, 0 0 60px #00ffff66; }
+      100% { box-shadow: 0 0 15px #00ffff66, 0 0 30px #00ffff33; }
     }
     footer {
       text-align: center;
@@ -126,6 +129,7 @@
       <h2>About $PROTONE</h2>
       <p>$PROTONE is a next-generation meme coin built for the people of the digital future — powered by AI, launched on Solana, and backed by unstoppable community energy. Stake, share, and thrive in a sci-fi meme economy!</p>
     </div>
+
     <div class="card">
       <h2>Tokenomics</h2>
       <ul>
